@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asteroids - NeoWs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Near Earth Asteroids</h1>
+        <p class="subtitle">Live data from NASA's NeoWs (Near Earth Object Web Service)</p>
+    </header>
+
+    <nav>
+        <a href="#" id="link_feed">Asteroids by Closest Approach Date</a>
+        <a href="#" id="link_browse">Browse the Overall Asteroid Dataset</a>
+    </nav>
+
+    <main>
+        <!-- date range form, only shown for the closest approach option -->
+        <form id="feed_form" hidden>
+            <div>
+                <label for="start_date">Start date</label>
+                <input type="date" id="start_date" required>
+            </div>
+            <div>
+                <label for="end_date">End date</label>
+                <input type="date" id="end_date" required>
+            </div>
+            <button type="submit">Search</button>
+            <p class="hint">NASA allows a range of up to 7 days.</p>
+        </form>
+
+        <p id="status">Choose one of the options above to load asteroid data.</p>
+        <div id="summary"></div>
+
+        <div class="table_wrap">
+            <table id="results" hidden>
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="pager" hidden>
+            <button type="button" id="prev_page">&larr; Previous</button>
+            <span id="page_label"></span>
+            <button type="button" id="next_page">Next &rarr;</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
